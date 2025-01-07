@@ -106,7 +106,7 @@ const Login_Register = () => {
                         
                             <input type="text" placeholder="Name" onChange={(e) => setname(e.target.value)} />
                             <input type="email" placeholder="Email" onChange={(e) => seteamil(e.target.value)} />
-                            <Input.Password type="password" placeholder="Password" onChange={(e) => setpassword(e.target.value)} />
+                            <Input.Password type="password" placeholder="Password" minLength={'8'} onChange={(e) => setpassword(e.target.value)} />
                             <button type="submit">Sign Up</button>
                         </form>
                     </div>
@@ -115,7 +115,7 @@ const Login_Register = () => {
                             <h1>Sign In</h1>
                            
                             <input type="email" placeholder="Email" onChange={(e) => seteamil(e.target.value)} />
-                            <input type="password" placeholder="Password" onChange={(e) => setpassword(e.target.value)} />
+                            <input type="password" placeholder="Password" minLength={'8'} onChange={(e) => setpassword(e.target.value)} />
                             <Link to={"/forgetpassword"}>Forget Your Password?</Link>
                             <button type="submit">Sign In</button>
                         </form>
