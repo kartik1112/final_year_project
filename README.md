@@ -58,7 +58,7 @@ npm start
 Navigate to the `node-server` folder, install dependencies, and configure environment variables:
 
 ```sh
-cd node-server
+cd node-server-1
 npm install
 ```
 
@@ -83,7 +83,7 @@ npm start
 Navigate to the `flask-server` folder, create a virtual environment, and install dependencies:
 
 ```sh
-cd flask-server
+cd flask-server-2
 python -m venv venv
 source venv/bin/activate  # On macOS/Linux
 venv\Scripts\activate  # On Windows
