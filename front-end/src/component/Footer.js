@@ -25,9 +25,7 @@ const Footer = () => {
                                 <li className="nav-item">
                                 <Nav.Link as = {Link} to={'/login'}>Login</Nav.Link>
                                 </li>
-                                <li className="nav-item">
-                                <Nav.Link as = {Link} to={'/contact'}>Contact us</Nav.Link>
-                                </li>
+                               
                                 <li className="nav-item">
                                 <Nav.Link as = {Link} to={'/about'}>About</Nav.Link>
                                 </li>

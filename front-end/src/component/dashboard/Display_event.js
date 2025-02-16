@@ -7,6 +7,7 @@ const { Meta } = Card;
 const Display_event = ({refresh,onclick}) => {
     const [events, setEvents] = useState([]);
     const navigate = useNavigate()
+    
     const fetchEvents = async () => {
         const userString = localStorage.getItem("user");
         if (userString) {

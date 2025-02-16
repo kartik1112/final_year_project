@@ -307,7 +307,7 @@ const Dashboard = () => {
                         {/* In Event photos */}
                         <div id="InEvent" className=" justify-content-center active" style={{ display: 'none' }} >
                             <div>
-                                {renderEvent ? <InEvent backbtn={Events} eventID={eventID} name={eventName} pin={Dsiplay_Pin} /> : null}
+                                {renderEvent ? <InEvent backbtn={Events} setRefresh={setRefresh} eventID={eventID} name={eventName} pin={Dsiplay_Pin} /> : null}
                             </div>
                         </div>
 

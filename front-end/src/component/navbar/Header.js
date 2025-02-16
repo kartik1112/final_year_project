@@ -23,7 +23,7 @@ const Header = () => {
 
             <input type="checkbox" name="" id="chek" />
             <label for="chek"><i className="fa-solid fa-bars"></i></label>
-            <Link className="logo" to={'/'} >snap sap</Link>
+            <Link className="logo" to={'/'} >snap shot</Link>
             <nav className="">
             <Link to={'/'} >Home</Link>
             <Link to={'/about'} >About</Link>
