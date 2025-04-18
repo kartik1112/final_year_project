@@ -10,7 +10,13 @@ This project is an AI-powered photo-sharing platform that utilizes facial recogn
 - Create and manage multiple events
 - Upload and store event images
 - Face recognition-based image retrieval
+- QR code Scanning
 - Email verification for user registration
+
+
+[![Watch the video](https://img.youtube.com/vi/_E-HFZbGC5w/0.jpg)](https://www.youtube.com/watch?v=_E-HFZbGC5w)
+
+
 
 ## Project Structure
 
