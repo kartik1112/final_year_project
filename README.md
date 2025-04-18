@@ -4,6 +4,8 @@
 
 This project is an AI-powered photo-sharing platform that utilizes facial recognition technology to allow event attendees to access their pictures easily. Users can register, create events, and upload images. Guests can then retrieve their pictures by scanning their faces via a webcam. The system efficiently matches guest face embeddings with event images and displays the relevant photos.
 
+[Watch Promo video](https://www.youtube.com/watch?v=_E-HFZbGC5w)
+
 ## Features
 
 - User authentication (registration & login)
@@ -12,13 +14,6 @@ This project is an AI-powered photo-sharing platform that utilizes facial recogn
 - Face recognition-based image retrieval
 - QR code Scanning
 - Email verification for user registration
-
-[![Watch the video](https://img.youtube.com/vi/_E-HFZbGC5w/0.jpg)](https://www.youtube.com/watch?v=_E-HFZbGC5w)
-
-
-
-
-
 
 
 ## Project Structure
