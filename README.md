@@ -13,8 +13,8 @@ This project is an AI-powered photo-sharing platform that utilizes facial recogn
 - QR code Scanning
 - Email verification for user registration
 
+▶️ [Click here to watch Product video]([https://yourusername.github.io/your-repo/autoplay.html](https://youtu.be/_E-HFZbGC5w))
 
-[![Watch the video](https://img.youtube.com/vi/_E-HFZbGC5w/0.jpg)](https://www.youtube.com/watch?v=_E-HFZbGC5w)
 
 
 
