@@ -32,14 +32,33 @@ let otpStorage = {}; // In-memory store to map email -> OTP
 
 //-----------------------------------------------------------------------------
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = "Kartik";
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: "okdd qvrb zemg jjxs", // Use your Gmail app password here
+    user: "giga.core.work@gmail.com",
+    pass: "ezgp wein icvx xxmf", // Use your Gmail app password here
   },
 });
+
+async function sendEmail() {
+  try {
+    let info = await transporter.sendMail({
+      from: '"Sender Name" <your-email@gmail.com>', // Sender email
+      to: "kartik11buttan@gmail.com",            // Recipient email
+      subject: "Test Email from Gmail SMTP",        // Subject
+      text: "This is a test email sent via Gmail SMTP!", // Plain text body
+      html: "<b>This is a test email sent via Gmail SMTP!</b>", // HTML body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
+}
+
+// Run the email function
+sendEmail();
 
 //------------------------------------------------------------------------------
 const storage = multer.diskStorage({
