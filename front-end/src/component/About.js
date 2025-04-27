@@ -29,7 +29,7 @@ const About = () => {
                                 <h1 className="display-4 fw-bold mb-4 slide-in">Contribution</h1>
                                 <p className="lead mb-4 fade-in" style={{animationDelay: '0.2s'}}>
                                     This project, a Photo Sharing Website with Powerful Face Recognition, 
-                                    was developed by Azeem Khan and Abdul Kareem as part of our final year project.
+                                    was developed by Azeem Khan and Kartik Buttan and Bhavya Jain as part of our final year project.
                                 </p>
                                 <p className="fade-in" style={{animationDelay: '0.4s'}}>
                                     Together, we collaborated on testing, debugging, and refining the system 
