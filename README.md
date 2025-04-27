@@ -4,7 +4,6 @@
 
 This project is an AI-powered photo-sharing platform that utilizes facial recognition technology to allow event attendees to access their pictures easily. Users can register, create events, and upload images. Guests can then retrieve their pictures by scanning their faces via a webcam. The system efficiently matches guest face embeddings with event images and displays the relevant photos.
 
-[Watch Promo video](https://www.youtube.com/watch?v=_E-HFZbGC5w)
 
 ## Features
 
@@ -41,11 +40,7 @@ Ensure you have the following installed before proceeding:
 
 MongoDB is used for storing user data, events, and face embeddings. Before running the servers, create a MongoDB database named `photo_sharing_db`:
 
-```sh
-mongo
-use photo_sharing_db
-exit
-```
+Add Mongo DB url in node service and flask service 
 
 ### Front-end Setup
 
