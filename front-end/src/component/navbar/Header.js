@@ -1,41 +1,92 @@
-import React,{useEffect} from "react";
-import {Link}from 'react-router-dom'
-import {Nav,Navbar,Container} from 'react-bootstrap'
-import './header.css'
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import './header.css';
 
 const Header = () => {
+    const [scrolled, setScrolled] = useState(false);
+    const [expanded, setExpanded] = useState(false);
+    const location = useLocation();
+    
     useEffect(() => {
-        // Create a link element
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'; // Replace with your CDN URL
-    
-        // Append the link element to the head
-        document.head.appendChild(link);
-    
-        // Optional: Cleanup the link when the component is unmounted
-        return () => {
-          document.head.removeChild(link);
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
         };
-      }, []);
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setExpanded(false);
+    }, [location]);
+
     return (
-        <div className="header ">
-
-            <input type="checkbox" name="" id="chek" />
-            <label for="chek"><i className="fa-solid fa-bars"></i></label>
-            <Link className="logo" to={'/'} >snap shot</Link>
-            <nav className="">
-            <Link to={'/'} >Home</Link>
-            <Link to={'/about'} >About</Link>
-            
+        <Navbar 
+            expand="lg" 
+            fixed="top"
+            expanded={expanded}
+            onToggle={() => setExpanded(!expanded)}
+            className={`modern-navbar ${scrolled ? 'scrolled' : ''}`}
+        >
+            <Container>
+                <Navbar.Brand as={Link} to="/" className="navbar-brand">
+                    <div className="brand-logo">
+                        <span className="logo-icon">📸</span>
+                        <span className="logo-text">PhotoShare</span>
+                    </div>
+                </Navbar.Brand>
                 
+                <Navbar.Toggle aria-controls="navbar-nav">
+                    <div className="toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </Navbar.Toggle>
                 
-            </nav>
-            <Link to={'/login'} className="btn">sign up</Link>
+                <Navbar.Collapse id="navbar-nav">
+                    <Nav className="mx-auto">
+                        <Nav.Link 
+                            as={Link} 
+                            to="/" 
+                            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                        >
+                            Home
+                        </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to="/about" 
+                            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+                        >
+                            About
+                        </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to="/features" 
+                            className={`nav-link ${location.pathname === '/features' ? 'active' : ''}`}
+                        >
+                            Features
+                        </Nav.Link>
+                    </Nav>
+                    
+                    <div className="navbar-buttons">
+                        <Link to="/login" className="btn btn-outline">Login</Link>
+                        <Link to="/register" className="btn btn-primary">Sign Up</Link>
+                    </div>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
+};
 
-        </div>
-    )
-}
 export default Header;
-
-

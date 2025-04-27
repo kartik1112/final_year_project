@@ -1,0 +1,317 @@
+.camera-capture-container {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+}
+
+.camera-header-card {
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: none;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  position: relative;
+  padding-top: 16px;
+}
+
+.back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: white;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.camera-title {
+  color: white !important;
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+  text-align: center;
+}
+
+.camera-description {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 16px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 16px !important;
+}
+
+.camera-content-row {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.capture-card,
+.results-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px !important;
+  color: #333;
+}
+
+.card-icon {
+  margin-right: 8px;
+  color: #8b5cf6;
+  font-size: 20px;
+}
+
+/* Webcam and image capture */
+.webcam-container {
+  width: 100%;
+  height: 320px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webcam {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.captured-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captured-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.upload-area {
+  margin-bottom: 24px;
+}
+
+.photo-uploader {
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo-uploader .ant-upload-drag {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Action buttons */
+.capture-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.capture-button,
+.match-button {
+  height: 46px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: none;
+  min-width: 140px;
+}
+
+.capture-button:hover,
+.match-button:hover {
+  background: linear-gradient(135deg, #7c4eea, #5a5ce6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.reset-button,
+.mode-toggle-button {
+  height: 46px;
+  border-radius: 8px;
+  border-color: #e5e7eb;
+  min-width: 140px;
+}
+
+/* Results display */
+.results-container {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+  gap: 16px;
+}
+
+.loading-text {
+  color: #666;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.photo-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.photo-item:hover {
+  transform: translateY(-4px);
+}
+
+.matched-photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.photo-actions {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.download-button {
+  width: 100%;
+  border-radius: 4px;
+  background: #8b5cf6;
+  border: none;
+  font-size: 12px;
+  height: 28px;
+  padding: 0 8px;
+}
+
+.no-results,
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+  gap: 16px;
+  color: #666;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.instruction-icon {
+  font-size: 48px;
+  color: #e5e7eb;
+}
+
+/* Preview modal */
+.preview-modal {
+  width: 90vw !important;
+  max-width: 1200px !important;
+}
+
+.preview-modal .ant-modal-content {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0;
+}
+
+.preview-modal .ant-modal-close {
+  color: white;
+}
+
+.preview-modal .ant-modal-body {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fix for Ant Design row/col */
+.ant-row {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.ant-col {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .camera-capture-container {
+    padding: 12px;
+    width: 100%;
+  }
+  
+  .capture-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .capture-button,
+  .match-button,
+  .reset-button,
+  .mode-toggle-button {
+    width: 100%;
+  }
+  
+  .webcam-container,
+  .photo-uploader {
+    height: 280px;
+    width: 100%;
+  }
+  
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    width: 100%;
+  }
+}

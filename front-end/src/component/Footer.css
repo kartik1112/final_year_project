@@ -1,0 +1,208 @@
+.colorful-footer {
+  position: relative;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  background-size: 200% 200%;
+  color: white;
+  overflow: hidden;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 30px 30px;
+  animation: move-background 8s linear infinite;
+  z-index: 0;
+}
+
+.colorful-footer .container {
+  z-index: 1;
+}
+
+/* Animation for background gradient */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation for background pattern */
+@keyframes move-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+/* Nav items styling and animation */
+.footer-nav .nav-item {
+  color: white !important;
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.footer-nav .nav-item:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.footer-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-nav .nav-item:hover::after {
+  width: 80%;
+}
+
+/* Status badge styling */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.status-badge.online {
+  background-color: rgba(72, 187, 120, 0.9);
+  box-shadow: 0 0 10px rgba(72, 187, 120, 0.6);
+}
+
+.status-badge.offline {
+  background-color: rgba(245, 101, 101, 0.9);
+  box-shadow: 0 0 10px rgba(245, 101, 101, 0.6);
+}
+
+.status-badge.loading {
+  background-color: rgba(237, 137, 54, 0.9);
+  box-shadow: 0 0 10px rgba(237, 137, 54, 0.6);
+}
+
+.status-badge.loading::after {
+  content: "⟳";
+  display: inline-block;
+  margin-left: 5px;
+  animation: spin 1.5s linear infinite;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Entry animations */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.bounce-in {
+  animation: bounceIn 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.slide-in {
+  animation: slideIn 1s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,367 @@
+.create-event-container {
+    animation: fadeIn 0.5s ease;
+    padding: 24px 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .page-title {
+    margin-bottom: 8px !important;
+    color: #111827;
+  }
+  
+  .page-description {
+    margin-bottom: 24px !important;
+    font-size: 16px;
+    color: #6b7280;
+  }
+  
+  .content-row {
+    margin-top: 12px;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Card Styling */
+  .create-event-card,
+  .share-card,
+  .upload-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .create-event-card {
+    background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  }
+  
+  .card-title-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .card-icon-bg {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .success-bg {
+    background: linear-gradient(135deg, #10b981, #34d399);
+  }
+  
+  .upload-bg {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  }
+  
+  .card-icon {
+    font-size: 18px;
+  }
+  
+  /* Form Styling */
+  .create-event-form {
+    margin-top: 12px;
+    width: 100%;
+  }
+  
+  .styled-input {
+    border-radius: 8px;
+    height: 48px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s;
+  }
+  
+  .styled-input:hover, .styled-input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+  }
+  
+  .cover-upload .ant-upload-picture-card-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cover-upload .ant-upload.ant-upload-select-picture-card {
+    width: 100%;
+    max-width: 280px;
+    height: 160px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+    border: 2px dashed #e5e7eb;
+    transition: all 0.3s ease;
+  }
+  
+  .cover-upload .ant-upload.ant-upload-select-picture-card:hover {
+    border-color: #8b5cf6;
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  }
+  
+  .upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .upload-placeholder .anticon {
+    font-size: 24px;
+    margin-bottom: 4px;
+    color: #8b5cf6;
+  }
+  
+  /* Security Section */
+  .security-section {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+  }
+  
+  .switch-label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .switch-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  
+  .help-icon {
+    color: #8b5cf6;
+    cursor: pointer;
+  }
+  
+  .switch-description {
+    font-size: 14px;
+  }
+  
+  .styled-switch {
+    background: #e5e7eb;
+  }
+  
+  .styled-switch.ant-switch-checked {
+    background: #8b5cf6;
+  }
+  
+  .pin-input-container {
+    margin-top: 16px;
+  }
+  
+  .pin-input {
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .create-button {
+    height: 48px;
+    min-width: 140px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .create-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c4eea, #5a5ce6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+  }
+  
+  .reset-button {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+  }
+  
+  /* Share Card Styling */
+  .share-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .event-created-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+  }
+  
+  .success-message {
+    margin-bottom: 24px;
+  }
+  
+  .congrats-text {
+    color: #10b981;
+    margin-bottom: 8px !important;
+  }
+  
+  .share-description {
+    color: #6b7280;
+    font-size: 16px;
+  }
+  
+  .share-link {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  
+  .link-input {
+    flex: 1;
+    border-radius: 8px;
+    height: 48px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .copy-button {
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .copy-button:hover {
+    background: linear-gradient(135deg, #059669, #10b981);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  }
+  
+  /* QR Section */
+  .qr-section {
+    margin-top: 24px;
+  }
+  
+  .qr-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px !important;
+  }
+  
+  .qr-icon {
+    color: #111827;
+  }
+  
+  .qr-description {
+    color: #6b7280;
+    margin-bottom: 16px !important;
+  }
+  
+  .qr-container {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+  }
+  
+  /* Upload Card */
+  .upload-description {
+    margin-bottom: 16px !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .share-link {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .create-event-card, .share-card, .upload-card {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    
+    .create-button,
+    .reset-button,
+    .copy-button {
+      width: 100%;
+    }
+  }
+  
+  /* Fix for container width issues */
+  .ant-row {
+    width: 100%;
+    max-width: 100%;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+  
+  .form-column, 
+  .share-column {
+    width: 100%;
+  }
+  
+  /* Fix for Ant Design overrides */
+  .ant-card-body {
+    padding: 24px;
+    width: 100%;
+  }
+  
+  .ant-form-item {
+    width: 100%;
+  }
+  
+  /* Fix for container padding in parent elements */
+  .ant-layout-content {
+    padding: 0 !important;
+    width: 100%;
+  }
+  
+  /* Fix for Row and Col in Ant Design */
+  .ant-col {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }

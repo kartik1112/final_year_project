@@ -26,9 +26,9 @@ const Home = () => {
       <Sider />
 
       <Goal />
-      <div className='row start-row bg1'>
+      {/* <div className='row start-row bg1'>
         <Get_Start_Button />
-      </div>
+      </div> */}
       <div className='row home-video2'>
         <div className='col-12 col-lg-5 col-sm-3 home-video2-h'>
           <h1>Powerful Face Recognition</h1>
@@ -48,7 +48,7 @@ const Home = () => {
 
       <Container className='bg '>
         <div className='row start-row'>
-          <Get_Start_Button />
+          {/* <Get_Start_Button /> */}
         </div>
       </Container>
 
@@ -85,7 +85,7 @@ const Home = () => {
             </Card>
 
           </div>
-          <Get_Start_Button />
+          {/* <Get_Start_Button /> */}
         </div>
       </Container>
 

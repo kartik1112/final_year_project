@@ -1,0 +1,55 @@
+/* QR code styling */
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.download-qr-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: none;
+}
+
+.download-qr-btn:hover {
+  background: linear-gradient(135deg, #7c4eea, #5a5ce6);
+}
+
+/* QR section in the share card */
+.qr-section {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px !important;
+  text-align: center;
+}
+
+.qr-description {
+  color: #6b7280;
+  margin-bottom: 16px !important;
+  text-align: center;
+}
+
+.qr-container {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f3f4f6;
+  max-width: 280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

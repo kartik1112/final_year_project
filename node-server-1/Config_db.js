@@ -1,4 +1,4 @@
 
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/photo_sharing_db")
+mongoose.connect("mongodb+srv://kartik:kartik1112@cluster0.zvzcvgr.mongodb.net/test")

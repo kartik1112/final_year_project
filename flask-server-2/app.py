@@ -16,7 +16,7 @@ from flask_socketio import SocketIO
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/photo_sharing_db"  # Replace with your MongoDB URI
+app.config["MONGO_URI"] = "mongodb+srv://kartik:kartik1112@cluster0.zvzcvgr.mongodb.net/test"  # Replace with your MongoDB URI
 mongo = PyMongo(app)
 CORS(app)
 
@@ -70,6 +70,7 @@ def test_fetch():
 # API Endpoint to compare face embeddings and return matched photos
 @app.route('/match_faces', methods=['POST'])
 def match_faces():
+    print("Inside match_faces")
     if 'image' not in request.files or 'event_id' not in request.form:
         return jsonify({'error': 'No image file or event_id provided'}), 400
 

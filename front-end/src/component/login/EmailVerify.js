@@ -1,14 +1,19 @@
-import { Button, message } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { Button, message, Spin } from 'antd';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { MailOutlined, ReloadOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import Header from '../navbar/Header';
+import Footer from '../Footer';
+import './EmailVerify.css';
 
 const Verified = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [resendStatus, setResendStatus] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [verifyLoading, setVerifyLoading] = useState(false);
     const { email, password } = location.state || {};
-
+    const [countdown, setCountdown] = useState(0);
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
@@ -20,48 +25,49 @@ const Verified = () => {
         }
 
         // Check verification status immediately
-        if (email,password) {
+        if (email && password) {
             checkVerificationStatus();
         }
 
         // Optional: Auto-redirect to dashboard after successful verification
         if (status === 'success') {
-            message.success("Verified you Email!!!")
+            message.success("Email verified successfully!")
         }
-    }, [location, navigate]);
+    }, [location, navigate, email, password]);
 
     const checkVerificationStatus = async () => {
+        setVerifyLoading(true);
         try {
             const response = await fetch('http://localhost:5000/check-verification', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email,password }),
+                body: JSON.stringify({ email, password }),
             });
 
             const data = await response.json();
-            if (data.name&&data._id) {
-                message.success("Verified Succefully")
+            if (data.name && data._id) {
+                message.success("Verified successfully")
                 localStorage.setItem("user", JSON.stringify(data))
                 navigate('/dashboard'); // Redirect if already verified
-            }else{
+            } else {
                 message.warning(data.message)
             }
         } catch (error) {
-            message.warning('Error checking verification status:');
+            message.error('Error checking verification status. Please try again.');
+        } finally {
+            setVerifyLoading(false);
         }
     };
 
-
-    async function handleResend(e){
-        e.preventDefault()
-   
+    const handleResend = async (e) => {
+        e.preventDefault();
+        
+        if (countdown > 0) return;
+        
         setIsLoading(true);
         try {
-            // Ensure the email is passed correctly
-            
-
             const response = await fetch('http://localhost:5000/resend-verification', {
                 method: 'POST',
                 headers: {
@@ -71,29 +77,86 @@ const Verified = () => {
             });
 
             const data = await response.json();
-            message.warning(data.message)
+            message.info(data.message);
             setResendStatus(data.message || 'Verification email resent.');
+            
+            // Start countdown for resend button
+            setCountdown(60);
+            const timer = setInterval(() => {
+                setCountdown(prev => {
+                    if (prev <= 1) {
+                        clearInterval(timer);
+                        return 0;
+                    }
+                    return prev - 1;
+                });
+            }, 1000);
         } catch (error) {
             setResendStatus('Failed to resend the verification email. Please try again.');
+            message.error('Failed to resend verification email');
         } finally {
             setIsLoading(false);
-        
+        }
     };
 
-}
-
     return (
-        <div>
-            <h1 className='pt-5'>Verifying your email...</h1>
-            <h5>Please check your mail-Box Email: {email}</h5>
-            <p>we send you verification link just click to verify Your account.</p>
-            <Button className='primary-btn' onClick={checkVerificationStatus}>
-                Verification check
-            </Button><br/><br/>
-            <Link onClick={handleResend} disabled={isLoading}>
-                {isLoading ? 'Sending...' : 'Resend Verification Email'}
-            </Link>
-            {resendStatus && <p>{resendStatus}</p>}
+        <div className="email-verify-page">
+            <Header />
+            
+            <div className="verify-content">
+                <div className="animated-background"></div>
+                
+                <div className="verify-container">
+                    <div className="mail-icon">
+                        <MailOutlined />
+                    </div>
+                    
+                    <h1 className="verify-title">Verify Your Email</h1>
+                    
+                    <div className="verify-message">
+                        <p className="email-address">{email}</p>
+                        <p className="verify-instructions">
+                            We've sent a verification link to your email. 
+                            Please check your inbox and click the link to verify your account.
+                        </p>
+                    </div>
+                    
+                    <div className="verify-actions">
+                        <Button 
+                            type="primary" 
+                            icon={<CheckCircleOutlined />}
+                            className="verify-button"
+                            onClick={checkVerificationStatus}
+                            loading={verifyLoading}
+                            size="large"
+                        >
+                            I've Verified My Email
+                        </Button>
+                        
+                        <Button 
+                            type="default"
+                            icon={<ReloadOutlined spin={isLoading} />}
+                            onClick={handleResend}
+                            disabled={isLoading || countdown > 0}
+                            className="resend-button"
+                            size="large"
+                        >
+                            {countdown > 0 ? `Resend in ${countdown}s` : 'Resend Verification Email'}
+                        </Button>
+                    </div>
+                    
+                    {resendStatus && <p className="status-message">{resendStatus}</p>}
+                    
+                    <div className="verify-help">
+                        <p>
+                            Didn't receive the email? Check your spam folder or
+                            <Link to="/login" className="verify-link"> try another email address</Link>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <Footer />
         </div>
     );
 };

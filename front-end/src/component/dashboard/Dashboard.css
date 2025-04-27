@@ -1,0 +1,313 @@
+/* Main Layout */
+.dashboard-layout {
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.dashboard-sider {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, #2e3192, #1a1a2e);
+    position: relative;
+}
+
+.logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.dashboard-menu {
+    background: transparent;
+    border-right: none;
+}
+
+.dashboard-menu .ant-menu-item {
+    margin: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dashboard-menu .ant-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-menu .ant-menu-item-selected {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.dashboard-footer {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+}
+
+.logout-button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Header Styling */
+.dashboard-header {
+    background: white;
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-button {
+    font-size: 18px;
+    color: #333;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.welcome-message {
+    font-size: 1rem;
+    color: #555;
+}
+
+.welcome-message span {
+    font-weight: 600;
+    color: #333;
+}
+
+.user-avatar {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+}
+
+/* Content Styling */
+.dashboard-content {
+    padding: 32px;
+    background-color: #f9fafb;
+}
+
+.content-section {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Create Event Form */
+.create-event-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.create-event-form {
+    max-width: 100%;
+}
+
+.form-section {
+    margin-bottom: 24px;
+}
+
+.form-section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+.switch-label {
+    flex: 1;
+}
+
+.switch-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.cover-upload .ant-upload-list {
+    width: 100%;
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.create-button {
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    border: none;
+    height: 44px;
+    min-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.create-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Event Created Section */
+.event-created-section {
+    margin-top: 24px;
+    animation: fadeIn 0.5s ease;
+}
+
+.share-card, .upload-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.share-card h3, .upload-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.share-description {
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.share-link {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.share-link .ant-input {
+    margin-right: 8px;
+}
+
+.qr-section {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.qr-section h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 16px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .dashboard-content {
+        padding: 16px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-title-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .switch-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .switch-container .ant-switch {
+        margin-top: 12px;
+    }
+    
+    .share-link {
+        flex-direction: column;
+    }
+    
+    .share-link .ant-input {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}
